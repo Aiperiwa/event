@@ -1,0 +1,12 @@
+.pic {
+  position: absolute;
+  width: 100%;
+
+}
+
+.name {
+  position: relative;
+  width: 70%;
+  height: 30%;
+  margin-top: -115px;
+}
