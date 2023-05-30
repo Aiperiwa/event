@@ -1,6 +1,6 @@
 import React from "react";
 import Img from "../../image/headerImg.png"
-import Name from "../../image/Black_Minimalist_Simple_Personal_Name_Logo-removebg-preview.png"
+import Name from "../../image/logo.png"
 import Style from "./header.module.css"
 
 const Header = () => {

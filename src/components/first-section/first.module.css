@@ -30,3 +30,7 @@
 .text p:last-child {
     font-size: 24px;
 }
+.logo {
+    width: 50%;
+    height: 50%;
+}
