@@ -1,9 +1,16 @@
 import './App.css'
 import Header from './components/header/header'
+import Map from "../src/components/map/map"
 
 export const App = () => {
   return (
-    <Header/>
-   
+    <>
+    <div>
+    {/* <Header/> */}
+    </div>
+<div>
+    <Map />
+</div>
+    </>
   )
 }
