@@ -1,7 +1,9 @@
 import './App.css'
+import Header from './components/header/header'
 
 export const App = () => {
   return (
-    <div>App</div>
+    <Header/>
+   
   )
 }
