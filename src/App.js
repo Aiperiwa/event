@@ -1,16 +1,15 @@
-import './App.css'
-import Header from './components/header/header'
-import Map from "../src/components/map/map"
+import React from 'react';
+import './App.css';
+import Header from './components/header/header';
+import FirstContent from './components/first-section/FirstSection';
 
 export const App = () => {
   return (
-    <>
     <div>
-    {/* <Header/> */}
+      <Header />
+      <FirstContent />
     </div>
-<div>
-    <Map />
-</div>
-    </>
-  )
-}
+  );
+};
+
+export default App; 
