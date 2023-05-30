@@ -1,5 +1,6 @@
 import React from "react";
 import M from "../../components/map/map.module.css"
+
 const Map = () => {
   return (
     <div className={M.container}>
@@ -8,7 +9,7 @@ const Map = () => {
       <p>г. Бишкек, улица Аалы Токомбаева, 21/2</p>
       <iframe
         src="https://yandex.ru/map-widget/v1/-/CCUsvOApXC"
-        width="40%"
+        width="80%"
         height="400px"
         frameBorder="0"
         title="Карта"
