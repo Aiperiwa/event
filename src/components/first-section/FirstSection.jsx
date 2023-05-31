@@ -2,6 +2,7 @@ import React from "react";
 import Img from "../../image/flower.png"
 import First from "./first.module.css"
 import logo from "../../image/Logo2.png"
+import phon from "../../image/phon.png"
 
 
 export const FirstContent = () => {
@@ -16,6 +17,7 @@ export const FirstContent = () => {
         <h2>20 августа 2023</h2>
         <p>Сбор гостей в 16:00</p>
         <img className={First.logo} src={logo} alt="" />
+        <img className={First.phon} src={phon} alt="" />
     </div>
     
   </div>
