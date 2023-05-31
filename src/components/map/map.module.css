@@ -6,10 +6,15 @@
 .container h2 {
     font-family: 'Marck Script', cursive;
     color: #BE7E4A;
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .container p {
     font-family: "Noto Serif Jp", serif;
     color: #597824;
+}
+
+.map{
+    margin-top: 20px;
+
 }

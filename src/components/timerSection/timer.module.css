@@ -8,7 +8,8 @@
 
 .bcg {
   width: 100%;
-  height: 436px;
+  height: 150px;
+  margin-bottom: 50px;
   color: #597824;
   display: flex;
   flex-direction: column;
@@ -23,7 +24,7 @@
 .bcg h1 {
   font-family: 'Marck Script', cursive;
   color: #BE7E4A;
-  font-size: 40px;
+  font-size: 35px;
 }
 
 .numbers {
@@ -62,15 +63,15 @@ p {
   /* align-items: center; */
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 451px) {
   .bcg {
     display: flex;
     align-items: center;
   }
    .bcg h1 {
     margin: 0 25px;
-    margin-bottom: 100px;
-  }
+    margin-bottom: 20px;
+    }
 
   .numbers {
     font-size: 40px;
