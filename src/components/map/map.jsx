@@ -7,7 +7,7 @@ const Map = () => {
       <h2>Место проведения</h2>
       <p>Банкетный зал "Jannat Resort"</p>
       <p>г. Бишкек, улица Аалы Токомбаева, 21/2</p>
-      <iframe
+      <iframe className={M.map}
         src="https://yandex.ru/map-widget/v1/-/CCUsvOApXC"
         width="80%"
         height="400px"
