@@ -4,6 +4,7 @@ import Header from './components/header/header';
 import FirstContent from './components/first-section/FirstSection';
 import CountdownTimer from './components/timerSection/timer';
 import Map from './components/map/map'
+import Contacts from './components/contacts/Contacts';
 
 export const App = () => {
   return (
@@ -12,6 +13,7 @@ export const App = () => {
       <FirstContent />
       <CountdownTimer/>
       <Map />
+      <Contacts/>
     </div>
   );
 };
