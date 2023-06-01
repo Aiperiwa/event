@@ -1,88 +1,82 @@
-import Timer from "./timer.module.css"
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import './timer.css';
 
 const CountdownTimer = () => {
-  const endDate = new Date("08/20/2023 12:00 PM").getTime();
-  const [timeRemaining, setTimeRemaining] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
+  const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      const currentTime = new Date().getTime();
-      const distance = endDate - currentTime;
+    const targetDate = new Date('08/20/2023 12:00').getTime();
 
-      if (distance > 0) {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
 
-        setTimeRemaining({ days, hours, minutes, seconds });
-      } else {
-        clearInterval(intervalId);
-        setTimeRemaining({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      }
-    }, 1000);
-    // if (seconds < 10) {
-    //   seconds = `0${seconds}`
-    // }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    return () => clearInterval(intervalId);
+      setCountdown({ days, hours, minutes, seconds });
+    };
+
+    const interval = setInterval(updateCountdown, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
+  const { days, hours, minutes, seconds } = countdown;
+
   return (
-    <div className={Timer.bcg}>
-      <h1>До торжества осталось:</h1>
-      <div className={Timer.time}>
-        {timeRemaining.days !== 0 && (
-          <div className={Timer.parent}>
-            <div className={Timer.numbers}>
-              {timeRemaining.days > 9
-                ? timeRemaining.days
-                : `0${timeRemaining.days}`}{" "}
-              <p>|</p>
-            </div>
-            <div className={Timer.text}>days</div>
+    <div className="countdown-clock">
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <div className="flip-card-value">{days}</div>
+            <div className="flip-card-label">Days</div>
           </div>
-        )}
-        {timeRemaining.hours !== 0 && (
-          <div className={Timer.parent}>
-            <div className={Timer.numbers}>
-              {timeRemaining.hours > 9
-                ? timeRemaining.hours
-                : `0${timeRemaining.hours}`}{" "}
-              <p>|</p>
-            </div>
-            <div className={Timer.text}>hours</div>
+          <div className="flip-card-back">
+            <div className="flip-card-value">{days}</div>
+            <div className="flip-card-label">Days</div>
           </div>
-        )}
-        {timeRemaining.minutes !== 0 && (
-          <div className={Timer.parent}>
-            <div className={Timer.numbers}>
-              {timeRemaining.minutes > 9
-                ? timeRemaining.minutes
-                : `0${timeRemaining.minutes}`}{" "}
-              <p>|</p>
-            </div>
-            <div className={Timer.text}>minutes</div>
+        </div>
+      </div>
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <div className="flip-card-value">{hours}</div>
+            <div className="flip-card-label">Hours</div>
           </div>
-        )}
-        {timeRemaining.seconds !== 0 && (
-          <div className={Timer.parent}>
-            <div className={Timer.numbers}>
-              {timeRemaining.seconds > 9
-                ? timeRemaining.seconds
-                : `0${timeRemaining.seconds}`}{" "}
-            </div>
-            <div className={Timer.text}>seconds</div>
+          <div className="flip-card-back">
+            <div className="flip-card-value">{hours}</div>
+            <div className="flip-card-label">Hours</div>
           </div>
-        )}
+        </div>
+      </div>
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <div className="flip-card-value">{minutes}</div>
+            <div className="flip-card-label">Minutes</div>
+          </div>
+          <div className="flip-card-back">
+            <div className="flip-card-value">{minutes}</div>
+            <div className="flip-card-label">Minutes</div>
+          </div>
+        </div>
+      </div>
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <div className="flip-card-value">{seconds}</div>
+            <div className="flip-card-label">Seconds</div>
+          </div>
+          <div className="flip-card-back">
+            <div className="flip-card-value">{seconds}</div>
+            <div className="flip-card-label">Seconds</div>
+          </div>
+        </div>
       </div>
     </div>
   );
