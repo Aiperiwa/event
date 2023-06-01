@@ -4,7 +4,7 @@ import Header from './components/header/header';
 import FirstContent from './components/first-section/FirstSection';
 import CountdownTimer from './components/timerSection/timer';
 import Map from './components/map/map'
-import Contacts from './components/contacts/Contacts';
+import Contacts from './components/contacts/contacts';
 
 export const App = () => {
   return (
